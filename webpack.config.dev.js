@@ -6,7 +6,7 @@ export default {
   devtool: 'inline-source-map',
   noInfo: false,
   entry: [
-    path.resolve(__dirname, 'src/index')
+    path.resolve(__dirname, 'src/index.ts')
   ],
   target: 'web',
   output: {
@@ -24,6 +24,7 @@ export default {
   module: {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
+      {test: /\.ts$/, loaders: ['babel']},
       {test: /\.css$/, loaders: ['style','css']}
     ]
   }

@@ -1,0 +1,37 @@
+﻿
+<div class="text-center"><h1>Tabs</h1></div>
+
+<div class="col-md-10 well well-sm topBar">
+    <div class="input-group add-on">
+        <input class="form-control" placeholder="Search" [(ngModel)]="searchTerm" name="srch-term" id="srch-term" type="text">
+        <div class="input-group-btn">
+            <button class="btn btn-default" (click)="onSearch()" [disabled]="searchTerm == ''" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+    </div>
+</div>
+<div class="col-md-2 well well-sm topBar">
+    <button class="btn btn-primary-outline newTab" (click)="onSelectNewTab()">New Tab</button>
+</div>
+
+<div [hidden]="tabs.length == 0">
+    <table class="table">
+        <thead>
+            <tr>
+                <td><h3>Artist:</h3></td>
+                <td><h3>Song:</h3></td>
+                <td><h3>Type:</h3></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of tabs">
+                <td class="padding">{{t.songArtist}}</td>
+                <td class="padding"><a (click)="onSelectTab(t.tabId)">{{t.songName}}</a></td>
+                <td class="padding">{{t.type}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="col-md-12 well well-sm alert" [hidden]="tabs.length != 0">
+    <span> Search returned no results </span>
+</div>

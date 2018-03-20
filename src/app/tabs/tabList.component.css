@@ -1,0 +1,30 @@
+﻿.table {
+    background-color: #17252A;
+    border: inset;
+    border-color: #66FCF1;
+    border-radius: 4px;
+}
+
+.padding {
+    padding-left: 25px;
+}
+
+a {
+    color: white;
+    cursor: pointer;
+}
+
+.topBar {
+    height: 60px;
+}
+
+.newTab {
+    width: 100%;
+}
+
+.alert {
+    text-align: center;
+    font-size:large;
+    font-weight:700;
+}
+

@@ -1,0 +1,22 @@
+﻿<head>
+    <script src="../shared/autosize.js"></script>
+</head>
+
+<div class="row">
+    <div class="well well-sm">
+        <h1>{{tab?.songName}}</h1>
+        <h4>By: {{tab?.songArtist}}</h4>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="well well-sm">
+        <div class="form-group col-sm-12">
+                <input type="button" class="btn btn-primary-outline" value="Back" (click)="onSelectBack()" />
+                <input type="button" class="btn btn-primary-outline pull-right" value="Delete" (click)="onSelectDelete()" />
+        </div>
+        <div>
+            <textarea class="form-control" name="tabBody" [ngModel]="tab?.tabBody" #tabBody="ngModel" rows="28" id="tab" cols="50" required></textarea>
+        </div>
+    </div>
+</div>

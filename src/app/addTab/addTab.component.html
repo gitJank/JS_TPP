@@ -1,0 +1,41 @@
+﻿<div class="text-center">
+    <h1>Add Tab</h1>
+</div>
+
+<div class="row">
+    <form (submit)="addTab()" #theForm="ngForm" novalidate>
+        
+        <div id="tabInfo" class="col-md-12 well well-sm">
+            <div class="form-group col-md-4">
+                <label for="artist">Artist:</label>
+                <input type="text" class="form-control" name="artist" [(ngModel)]="tabToAdd.songArtist" #artist="ngModel" required />
+                <div class="text-danger" *ngIf="artist.invalid && artist.touched && artist.errors.required">Artist is required</div>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="song">Song:</label>
+                <input type="text" class="form-control" name="song" [(ngModel)]="tabToAdd.songName" #song="ngModel" required />
+                <div class="text-danger" *ngIf="song.invalid && song.touched && song.errors.required">Song Name is required</div>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="type">Type:</label>
+                <select name="type" class="form-control" [(ngModel)]="tabToAdd.type" #type="ngModel" required>
+                    <option value="" selected disabled>Select Type</option>
+                    <option value="chord">Chords</option>
+                    <option value="tab">Tab</option>
+                </select>
+                <div class="text-danger" *ngIf="type.invalid && type.touched && type.errors.required">type is required</div>
+            </div>
+        </div>
+        <div id="tabBody" class="col-md-12 well well-sm">
+            <div id="tabArea" class="form-group">
+                <label for="comment">Tab:</label>
+                <textarea class="form-control" name="tabBody" [(ngModel)]="tabToAdd.tabBody" #tabBody="ngModel" rows="15" id="tab" cols="50" required></textarea>
+                <div class="text-danger" *ngIf="tabBody.invalid && tabBody.touched && tabBody.errors.required">Tab Body is required</div>
+            </div>
+            <div id="buttons" class="form-group" style="text-align:right">
+                <input type="submit" class="btn btn-primary-outline" value="Save" [disabled]="theForm.invalid" style="margin-right: 1%" />
+                <input type="submit" class="btn btn-primary-outline" value="Cancel" (click)="onSelectCancel()" />
+            </div>
+        </div>
+    </form>
+</div>

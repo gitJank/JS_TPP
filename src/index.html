@@ -28,24 +28,31 @@
   <meta charset="UTF-8">
 </head>
 <body style="margin: 5%">
-  <div class="col-md-6">
-    <div class="page-header">
-      <h1>Users</h1>
-    </div>
-  <div class="card">
-  <table class="table">
-    <thead>
-      <th>&nbsp;</th>
-      <th>Id</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-    </thead>
-    <tbody id="users">
-      
-    </tbody>
-  </table>
-  </div>
-</div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">TPP</a>
+        <button class="navbar-toggler" type="button" data-toggl e="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" router-link="">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" router-link="/viewTab">Tabs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" router-link="/addTab">AddTab</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" router-link="">About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <router-outlet></router-outlet>
+      <footer class="container">
+          <div class="text-center"> 2017 The Playing Possum LLC </div>
+      </footer>
 </body>
 </html>
